@@ -130,12 +130,15 @@ set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10"
 
+# tips: 'xprop | grep CLASS' to get window class
 assign [class="jetbrains-idea"] $ws5
 assign [class="Firefox"] $ws6
 assign [class="Google-chrome"] $ws6
 assign [class="zoom"] $ws7
 assign [class="Slack"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
+assign [class="Pavucontrol"] $ws9
+assign [class="Blueman-manager"] $ws9
 
 # switch to workspace
 bindsym $mod+ampersand workspace $ws1
