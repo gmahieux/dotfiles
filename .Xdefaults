@@ -18,7 +18,7 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
 
 URxvt.depth:                32
-URxvt.background:           rgba:0000/0000/0200/e800
+URxvt.background:           rgba:0000/0000/0200/ffff
 URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.shading:              30
