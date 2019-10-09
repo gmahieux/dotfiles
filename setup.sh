@@ -13,6 +13,8 @@ ln -sf $DIR/.Xresources $HOME/.Xresources
 ln -sf $DIR/.tmux $HOME/.tmux
 ln -sf $DIR/.tmux.conf $HOME/.tmux.conf
 
+ln -sf $DIR/.urxvt $HOME/.urxvt
+
 for file in $DIR/config/*; do
 	echo "Linking $(basename $file) config file"
 	ln -sf $file $HOME/.config/
