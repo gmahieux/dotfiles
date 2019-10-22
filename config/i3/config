@@ -260,7 +260,7 @@ bindsym XF86AudioPrev exec playerctl previous
 for_window [class=".*"] border pixel 2
 smart_gaps on
 smart_borders on
-gaps inner 10
+gaps inner 5
 gaps outer 0
 #client.focused #00C1FF #00C1FF #000088 #00C1FF
 #client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
