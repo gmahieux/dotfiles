@@ -10,7 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id feh --bg-scale /usr/share/backgrounds/fedora-workstation/aurora-over-iceland.png
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
+exec --no-startup-id "xinput --list | grep -E 'HID 05f3:0007  ' | awk -F'\t' '{print $2}' | awk -F'=' '{print $2}' | xargs -r -I{} setxkbmap -device {} us '' compose:caps"
 exec_always --no-startup-id "killall -q compton;compton --config ~/.config/i3/compton.conf"
 #exec --no-startup-id keepassxc
 
