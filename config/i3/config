@@ -220,6 +220,7 @@ mode "screenLayout" {
 	bindsym l exec --no-startup-id sh ~/.config/i3/screenlayout/laptop.sh
 	bindsym d exec --no-startup-id sh ~/.config/i3/screenlayout/desktop.sh
 	bindsym 2 exec --no-startup-id sh ~/.config/i3/screenlayout/dual_screen.sh
+	bindsym c exec --no-startup-id sh ~/.config/i3/screenlayout/clone.sh
 	
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
