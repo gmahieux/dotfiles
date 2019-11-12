@@ -18,8 +18,9 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
 
 URxvt.depth:                32
-URxvt.background:           rgba:0000/0000/0200/ffff
 URxvt.geometry:             90x30
+! URxvt.background:           rgba:0000/0000/0200/ffff
+URxvt.background:           rgba:aaaa/aaaa/aaaa/ffff
 URxvt.transparent:          false
 URxvt.shading:              30
 URxvt.fading:               0
@@ -59,7 +60,8 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 !!Source http://github.com/altercation/solarized
 
 *background: #002b36
-*foreground: #c0c0c0
+! *foreground: #c0c0c0
+*foreground: #000000
 ! *foreground: #657b83
 !!*fading: 40
 *fadeColor: #002b36
