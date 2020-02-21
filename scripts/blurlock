@@ -5,11 +5,11 @@ playerctl pause
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
 #D='#ff00ffcc'  # default
-D='#00c1ffee'
+D='#16a085ee'
 #T='#ee00eeee'  # text
-T='#00c1ffee'  # text
+T='#16a085ee'  # text
 W='#880000bb'  # wrong
-V='#000088aa'  # verifying
+V='#222D31aa'  # verifying
 
 i3lock \
 --insidevercolor=$C   \
@@ -36,7 +36,7 @@ i3lock \
 --indicator	      \
 --clock               \
 --timestr="%H:%M:%S"  \
---datestr="%A, %m %Y" \
+--datestr="%A %d %m %Y" \
 --wrongtext="Nope!"   \
 
 # --veriftext="Drinking verification can..."
