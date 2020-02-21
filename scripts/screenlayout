@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+    clone)
+	xrandr --output eDP-1 --primary --output DP-1 --same-as eDP-1
+        ;;
+    desktop)
+	xrandr --output DP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
+        ;;
+    dual)
+	xrandr --output DP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --off
+        ;;
+    laptop)
+	xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off	
+	;;
+    *)
+        echo "== ! screenlayout : missing or invalid argument ! =="
+        echo "Try again with: clone | desktop | dual | laptop"
+        exit 2
+esac
+
+exit 0
+

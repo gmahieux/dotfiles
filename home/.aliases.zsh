@@ -1,3 +1,4 @@
+alias vi='vim'
 alias gs='git status'
 alias gl='git log --oneline --decorate --max-count=15'
 alias gpr='git pull --rebase'

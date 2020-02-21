@@ -1,23 +1,18 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TILLER_NAMESPACE=saagie-common
-export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-if [ "$DESKTOP_SESSION" = "gnome-xorg" ]; then
-	export TERM="xterm-256color"
-fi
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_MODE='awesome-patched'
-#POWERLEVEL9K_MODE='awesome-fontconfig'
 
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 #zmodload zsh/zprof
 
@@ -70,7 +65,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kubectl git docker helm autojump)
+plugins=(git autojump kubectl helm docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-eval $(thefuck --alias) 
+eval $(thefuck --alias)
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -103,16 +98,7 @@ eval $(thefuck --alias)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/dotfiles/aliases.zsh
+source ~/.aliases.zsh
 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_STRATEGY="Default"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs ram kubecontext time)
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/lib64/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/lib64/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/lib64/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/lib64/google-cloud-sdk/completion.zsh.inc'; fi
-
-#zprof
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

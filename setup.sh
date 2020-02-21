@@ -2,25 +2,21 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-ln -sf $DIR/.zshrc $HOME/.zshrc
-ln -sf $DIR/.zprofile $HOME/.zprofile
-ln -sf $DIR/.bashrc $HOME/.bashrc
-ln -sf $DIR/.bash_profile $HOME/.bash_profile
-ln -sf $DIR/.gitconfig $HOME/.gitconfig
-ln -sf $DIR/.Xdefaults $HOME/.Xdefaults
-ln -sf $DIR/.Xresources $HOME/.Xresources
-
-ln -sf $DIR/.tmux $HOME/.tmux
-ln -sf $DIR/.tmux.conf $HOME/.tmux.conf
-
-ln -sf $DIR/.urxvt $HOME/.urxvt
+shopt -s dotglob
+for file in $DIR/home/*; do
+	echo "Linking $(basename $file) dotfile"
+	ln -sf $file $HOME/
+done
+shopt -u dotglob
 
 for file in $DIR/config/*; do
 	echo "Linking $(basename $file) config file"
+	rm -R $HOME/.config/$(basename $file)
 	ln -sf $file $HOME/.config/
 done
 
-# i3lock script overriding xfce lock in order to be able
-# to lock when hibernate/sleep
-sudo ln -sf $DIR/lock.sh /usr/local/bin/xflock4
-sudo chmod +x /usr/local/bin/xflock4
+# override manjaro/i3 blurlock with custom script
+for file in $DIR/scripts/*; do
+  echo "Linking $(basename $file) script file into /usr/local/bin"
+  sudo ln -sf $file /usr/local/bin/
+done

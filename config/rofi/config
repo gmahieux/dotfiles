@@ -6,7 +6,7 @@
 rofi.opacity: 50
 rofi.columns: 1
 
-rofi.lines: 8
+rofi.lines: 10
 rofi.eh: 1
 rofi.width: 800
 rofi.padding: 20
@@ -18,10 +18,11 @@ rofi.display-drun: Run
 rofi.monitor: primary
 
 !                  'background', 'border', 'separator'
-rofi.color-window: argb:ff2d303b, #00C1FF, #00C1FF
+rofi.color-window: argb:f1222D31, #16a085, #16a085
+!rofi.color-window: argb:ff2d303b, #00C1FF, #00C1FF
 !rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
 ! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal: argb:031d1f21, #f3f4f5, argb:031d1f21, argb:031d1f21, argb:aa00c1ff 
+rofi.color-normal: argb:031d1f21, #f3f4f5, argb:031d1f21, argb:8816a085, #f3f4f5 
 !rofi.color-urgent: argb:031d1f21, #f3f4f5, argb:bc303541, argb:031d1f21, #9575cd
 rofi.color-active: argb:ffffc1ff, #ff0000, argb:031d1f21, argb:031d1f21, #9575cd 
-rofi.font: Droid Sans Mono 18
+rofi.font: Droid Sans Mono 14

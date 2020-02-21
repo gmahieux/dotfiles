@@ -1,1 +1,0 @@
-/home/ghislain/dotfiles/.tmux

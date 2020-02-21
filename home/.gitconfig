@@ -1,9 +1,8 @@
-# Ceci est le fichier de configuration personnel de Git.
 [user]
-# Veuillez adapter et décommenter les lignes suivantes :
 	name = Ghislain MAHIEUX
 	email = ghislain.mahieux@saagie.com
 [core]
+	editor = vim
 	pager = cat
 [rebase]
 	autosquash = true
