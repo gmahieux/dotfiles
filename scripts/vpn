@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$1" in
+  up)
+    nmcli connection up Saagie
+    ;;
+  down)
+    nmcli connection down Saagie
+    ;;
+  toggle)
+    active=`nmcli c show --active | grep Saagie | wc -l`
+    if [ $active = "0" ]; then
+      nmcli connection up Saagie
+      notify-send "VPN Saagie" "VPN activé"
+    else
+      nmcli connection down Saagie
+      notify-send "VPN Saagie" "VPN désactivé"
+    fi
+    ;;
+  *)
+    echo "vpn [up|down|toggle]"
+esac
+exit 0
+	
