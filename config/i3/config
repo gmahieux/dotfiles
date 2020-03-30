@@ -229,7 +229,10 @@ for_window [class="Xfburn"] floating enable
 for_window [class="KeePassXC"] floating enable
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+#for_window [urgent=latest] focus
+
+focus_follows_mouse no
+workspace_auto_back_and_forth no
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
