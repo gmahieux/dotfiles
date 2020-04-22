@@ -11,6 +11,7 @@ set $alt Mod1
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
 default_floating_border normal
+default_orientation vertical
 
 # Hide borders
 hide_edge_borders none
