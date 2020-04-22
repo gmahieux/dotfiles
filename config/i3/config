@@ -78,6 +78,7 @@ bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 bindsym $mod+k exec --no-startup-id keepassxc
+bindsym $mod+a exec --no-startup-id rofimoji
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
