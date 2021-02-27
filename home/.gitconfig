@@ -6,3 +6,5 @@
 	pager = cat
 [rebase]
 	autosquash = true
+[pull]
+	rebase = true
