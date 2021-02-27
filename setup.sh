@@ -15,6 +15,9 @@ for file in $DIR/config/*; do
 	ln -sf $file $HOME/.config/
 done
 
+echo "Copying /etc files"
+sudo cp -rf $DIR/etc/* /etc
+
 # override manjaro/i3 blurlock with custom script
 for file in $DIR/scripts/*; do
   echo "Linking $(basename $file) script file into /usr/local/bin"
