@@ -1,0 +1,9 @@
+#!/bin/bash
+entries=$(cat ~/.slack_status.conf | grep PRESET_TEXT_ | sed 's/PRESET_TEXT_.*="\(.*\)"/\1/' | awk '{print}' ORS='\\n')
+select=$(echo -e "$entries[Reset]" | rofi -dmenu -p "Set slack status " -no-custom -lines 7 -width 800)
+[ -z "$select" ] && exit 0
+[ "$select" = "[Reset]" ] && slack_status_updater none && exit 0
+
+status=$(cat ~/.slack_status.conf | grep "\"$select\"" | sed 's/PRESET_TEXT_\(.*\)=.*/\1/')
+slack_status_updater $status
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+#export DISPLAY=':0'
+#CURRENT=$(cat ~/.slackstatus)
+#if xprop -name "Zoom Meeting"; then
+#   if [ "$CURRENT" != "zoom" ]; then
+#     /usr/local/bin/slack_status_updater zoom
+#     echo $CURRENT > ~/.slackstatus.old
+#   fi
+#else
+#   if [ "$CURRENT" = "zoom" ]; then
+#     /usr/local/bin/slack_status_updater $(cat ~/.slackstatus.old)
+#   fi
+#fi
