@@ -1,17 +1,18 @@
 #!/bin/sh
-
+LAPTOP="eDP-1"
+DESKTOP="DP-3"
 case "$1" in
     clone)
-	xrandr --output eDP-1 --primary --output DP-1 --same-as eDP-1
+	xrandr --output $LAPTOP --primary --output $DESKTOP --same-as $LAPTOP
         ;;
     desktop)
-	xrandr --output DP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
+	xrandr --output $DESKTOP --primary --mode 1920x1200 --pos 0x0 --rotate normal --output $LAPTOP --off --output DP2 --off
         ;;
     dual)
-	xrandr --output DP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --off
+	xrandr --output $DESKTOP --primary --mode 1920x1200 --pos 0x0 --rotate normal --output $LAPTOP --mode 1680x1050 --pos 1920x0 --rotate normal 
         ;;
     laptop)
-	xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off	
+	xrandr --output $LAPTOP --primary --mode 1680x1050 --pos 0x0 --rotate normal --output $DESKTOP --off 
 	;;
     *)
         echo "== ! screenlayout : missing or invalid argument ! =="
@@ -22,4 +23,3 @@ esac
 nitrogen --restore
 
 exit 0
-

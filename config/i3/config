@@ -37,7 +37,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun "" -monitor primary
 
 # launch categorized menu
 bindsym $mod+Ctrl+d exec --no-startup-id morc_menu
@@ -73,10 +73,10 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 #bindsym $mod+F5 exec terminal -e 'mocp'
 #bindsym $mod+t exec --no-startup-id pkill compton
 #bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+$alt+d --release exec "dunst_switch_screen"
+#bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+#bindsym $mod+$alt+d --release exec "dunst_switch_screen"
 
-bindsym $mod+F2 exec set_slack_status
+#bindsym $mod+F2 exec set_slack_status
 
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -138,7 +138,7 @@ bindsym $mod+Print --release exec --no-startup-id "scrot -s ~/Images/screenshots
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-bindsym $mod+$alt+Left move workspace to DP-1
+bindsym $mod+$alt+Left move workspace to DP-3
 bindsym $mod+$alt+Right move workspace to eDP-1
 
 # Workspace names
@@ -156,9 +156,9 @@ set $ws6 "6  "
 #zoom
 set $ws7 "7  "
 #slack
-set $ws8 "8  "
+set $ws8 "8"
 #spotify
-set $ws9 "9  "
+set $ws9 "9 "
 set $ws0 "10"
 
 # tips: 'xprop | grep CLASS' to get window class
@@ -169,9 +169,11 @@ assign [class="Chromium"] $ws6
 assign [class="firefoxdeveloperedition"] $ws6
 assign [class="zoom"] $ws7
 assign [class="Slack"] $ws8
+assign [class="discord"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
 
 workspace $ws7 output eDP-1 primary
+workspace $ws8 output eDP-1 primary
 workspace $ws9 output eDP-1 primary
 
 # switch to workspace
@@ -310,6 +312,9 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent  # Required for redshift to work properly     
+exec --no-startup-id redshift-gtk            
 # exec --no-startup-id clipit
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id blueman-tray
@@ -380,7 +385,7 @@ bar {
 }
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+# bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border

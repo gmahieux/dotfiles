@@ -83,7 +83,7 @@ tztime local {
 
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        path = "/proc/sys/net/ipv4/conf/tun0"
+        path = "/proc/sys/net/ipv4/conf/ppp0"
 	format_down=""
-	format="<span color='#2AA198'> ﯱ </span>"
+	format="<span color='#2AA198'> </span>"
 }

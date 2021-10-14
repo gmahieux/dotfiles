@@ -1,7 +1,7 @@
 #!/bin/bash
 #while [ "$select" != "Cancel" -a "$select" != "Logout" -a "$select" != "Power-off" -a "$select" != "Reboot" ];
 #do
-	select=$(echo -e 'Cancel\nLock\nSuspend\nHibernate\nPower-off\nLogout\nReboot' | rofi -dmenu -p "Exit " -no-custom -lines 7 -width 300)
+	select=$(echo -e 'Cancel\nLock\nSuspend\nHibernate\nPower-off\nLogout\nReboot' | rofi -dmenu -p "Exit " -monitor primary -no-custom -l 7 -theme-str 'window {width: 300;}  inputbar { enabled: false; } listview { border: 0px; }')
 #	[ -z "$select" ] && exit 0
 #done
 [ "$select" = "Cancel" ] && exit 0
