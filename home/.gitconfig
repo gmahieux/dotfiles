@@ -1,6 +1,5 @@
 [user]
 	name = Ghislain MAHIEUX
-	email = ghislain.mahieux@saagie.com
 [core]
 	editor = vim
 	pager = cat
@@ -8,5 +7,3 @@
 	autosquash = true
 [pull]
 	rebase = true
-[gui]
-	recentrepo = /home/ghislain/dev/karnott/karnott-calculator
