@@ -11,8 +11,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="../../zsh-theme-powerlevel10k/powerlevel10k" 
 #zmodload zsh/zprof
 
 # Set list of themes to load
