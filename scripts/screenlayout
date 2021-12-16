@@ -1,18 +1,20 @@
 #!/bin/sh
 LAPTOP="eDP-1"
-DESKTOP="DP-3"
+LAPTOP_RES="1920x1080"
+DESKTOP="HDMI-0"
+DESKTOP_RES="2560x1440"
 case "$1" in
     clone)
 	xrandr --output $LAPTOP --primary --output $DESKTOP --same-as $LAPTOP
         ;;
     desktop)
-	xrandr --output $DESKTOP --primary --mode 1920x1200 --pos 0x0 --rotate normal --output $LAPTOP --off --output DP2 --off
+	xrandr --output $DESKTOP --primary --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --off --output DP2 --off
         ;;
     dual)
-	xrandr --output $DESKTOP --primary --mode 1920x1200 --pos 0x0 --rotate normal --output $LAPTOP --mode 1680x1050 --pos 1920x0 --rotate normal 
+	xrandr --output $DESKTOP --primary --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --mode $LAPTOP_RES --pos ${DESKTOP_RES:0:4}x0 --rotate normal 
         ;;
     laptop)
-	xrandr --output $LAPTOP --primary --mode 1680x1050 --pos 0x0 --rotate normal --output $DESKTOP --off 
+	xrandr --output $LAPTOP --primary --mode $LAPTOP_RES --pos 0x0 --rotate normal --output $DESKTOP --off 
 	;;
     *)
         echo "== ! screenlayout : missing or invalid argument ! =="
