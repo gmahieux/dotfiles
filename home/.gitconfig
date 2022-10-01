@@ -1,9 +1,13 @@
 [user]
-	name = Ghislain MAHIEUX
+	name = Ghislain Mahieux
+	email = ghislain.mahieux@gmail.com
 [core]
 	editor = vim
 	pager = cat
 [rebase]
 	autosquash = true
+	autoStash = true
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true

@@ -1,0 +1,7 @@
+select=$(echo -e 'Laptop\nTwo\nThree\nDesktop' | rofi -dmenu -p "SSH tunnel " -monitor primary -no-custom -l 4 -theme-str 'window {width: 300;}  inputbar { enabled: false; } listview { border: 0px; }')
+
+[ "$select" = "Laptop" ] && autorandr laptop
+[ "$select" = "Two" ] && autorandr two
+[ "$select" = "Three" ] && autorandr three
+[ "$select" = "Desktop" ] && autorandr desktop
+

@@ -23,3 +23,9 @@ for file in $DIR/scripts/*; do
   echo "Linking $(basename $file) script file into /usr/local/bin"
   sudo ln -sf $file /usr/local/bin/
 done
+
+pamac install termite ttf-nerd-fonts-symbols zsh-theme-powerlevel10k gvim gnome-calculator thefuck xautolock xfce4-settings compton pavucontrol blueman xfce4-power-manager pasystray volumeicon autojump i3lock-color-git noto-fonts-emoji oh-my-zsh pulseaudio rofi rofimoji zsh-autosuggestions profile-sync-daemon playerctl
+pamac install spotify slack-desktop
+
+chsh -s $(which zsh)
+

@@ -1,17 +1,18 @@
 #!/bin/sh
-LAPTOP="eDP-1"
+LAPTOP="eDP"
 LAPTOP_RES="1920x1080"
-DESKTOP="HDMI-0"
+DESKTOP="DisplayPort-4"
 DESKTOP_RES="2560x1440"
+DESKTOP_RATE="75.00"
 case "$1" in
     clone)
-	xrandr --output $LAPTOP --primary --output $DESKTOP --same-as $LAPTOP
+	xrandr --output $LAPTOP --primary --output $DESKTOP --rate $DESKTOP_RATE --same-as $LAPTOP
         ;;
     desktop)
-	xrandr --output $DESKTOP --primary --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --off --output DP2 --off
+	xrandr --output $DESKTOP --primary --rate $DESKTOP_RATE --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --off
         ;;
     dual)
-	xrandr --output $DESKTOP --primary --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --mode $LAPTOP_RES --pos ${DESKTOP_RES:0:4}x0 --rotate normal 
+	xrandr --output $DESKTOP --primary --rate $DESKTOP_RATE --mode $DESKTOP_RES --pos 0x0 --rotate normal --output $LAPTOP --mode $LAPTOP_RES --pos ${DESKTOP_RES:0:4}x0 --rotate normal 
         ;;
     laptop)
 	xrandr --output $LAPTOP --primary --mode $LAPTOP_RES --pos 0x0 --rotate normal --output $DESKTOP --off 
